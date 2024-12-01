@@ -1,0 +1,342 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Main App Container */
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(1, 1, 1, 1.0);
+  background: linear-gradient(135deg, rgba(1, 1, 1, 1.0), rgba(44, 1, 74, 1.0));
+  color: #ffffff;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 44vh;
+  max-width: 1200px;
+  padding: 10px;
+}
+
+/* Title */
+.title {
+  font-size: 7rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+  flex-grow: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.title:hover {
+  transform: scale(1.1); /* Hover animation for main title */
+}
+
+.logo {
+  width: 30vh;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo img {
+  width: 28vh;
+  height: auto;
+  max-width: 100%;
+  max-height: 30vh;
+  border-radius: 10px;
+}
+
+
+.description {
+  background-color: transparent; /* Light background for contrast */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 5px 5px 5px rgb(110, 105, 105); /* Soft shadow for depth */
+  border: 1px solid rgb(110, 105, 105);
+  max-width: 800px; /* Max width for readability */
+  margin: 20px auto; /* Center the div horizontally */
+}
+
+.description p {
+  font-size: 1.1rem; /* Slightly larger text for readability */
+  line-height: 1.6; /* More spacing between lines */
+  color: #ffffff; /* Dark text for contrast */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  text-align: justify; /* Justify text for a neat look */
+}
+
+.description p::first-letter {
+  font-size: 2rem; /* Larger first letter for a classic touch */
+  font-weight: bold; /* Make the first letter bold */
+  color: #3b8f8f; /* Accent color for the first letter */
+}
+
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0); /* Initial position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move up */
+  }
+  100% {
+    transform: translateY(0); /* Return to initial position */
+  }
+}
+
+/* Buttons Section */
+.buttons {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Info Section */
+.info-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.info-section li {
+  margin-bottom: 15px; /* Add space between each li item */
+  font-size: 1.2rem;
+}
+.info-section h1{
+  font-size: 3rem;
+}
+
+.info-section > div {
+  flex: 1;
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.info-section li img {
+  display: block;
+  width: 60%; /* Adjust the width to make the images smaller */
+  height: auto; /* Maintain aspect ratio */
+  margin: 10px 0; /* Add vertical spacing */
+  border-radius: 8px; /* Optional: rounds the corners of the images */
+}
+
+
+
+.how-to-use {
+  margin-left: 20px;
+}
+
+/* Version Table Styles */
+.version-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.version-table th, .version-table td {
+  border-left: none;
+  border-right: none;
+  padding: 12px 15px;
+  text-align: left;
+  color: white;
+}
+
+.version-table th {
+  background-color: transparent;
+  font-weight: bold;
+  color: #f9f9f9;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.version-table tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.version-table td {
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.version-table td:first-child {
+  font-weight: bold;
+}
+
+/* Fade effect for top and bottom borders */
+.version-table th:before,
+.version-table th:after,
+.version-table td:before,
+.version-table td:after {
+  content: '';
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(to right, 
+    rgba(255, 255, 255, 0), 
+    rgba(255, 255, 255, 0.2), 
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.version-table th:before,
+.version-table td:before {
+  top: 0;
+}
+
+.version-table th:after,
+.version-table td:after {
+  bottom: 0;
+}
+
+/* Rounded corners */
+.version-table tr:first-child th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.version-table tr:first-child th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.version-table tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.version-table tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+/* Button styling */
+.version-table .download-btn {
+  background-color: #44cc44; /* Green background for the button */
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px; /* Rounded corners for the button */
+  cursor: pointer;
+  text-align: center;
+}
+
+.version-table .download-btn:hover {
+  background-color: #37a337; /* Darker green when hovered */
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 4rem;
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    margin: 10px auto;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .info-section {
+    flex-direction: column;
+  }
+
+  .installation-steps {
+    border-right: none;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc; /* Divider for mobile view */
+  }
+
+  .how-to-use {
+    margin-left: 0;
+  }
+
+  /* Table adjustment for smaller screens */
+  .version-table table {
+    font-size: 0.9rem; /* Slightly smaller text for better fit */
+  }
+}
+
+/* Separator Line for Larger Screens */
+.info::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 1px;
+  background-color: #271c33;
+  z-index: 1;
+}
+
+/* Separator Line for Smaller Screens */
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column;
+  }
+
+  .info::after {
+    width: 1px;
+    height: 90%;
+    transform: translate(-50%, -10%);
+  }
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
